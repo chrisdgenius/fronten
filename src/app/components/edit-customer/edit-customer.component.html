@@ -1,0 +1,159 @@
+<div><h3>Edit Customer</h3></div>
+<div><h3>Edit Customer {{customerId}}</h3></div>
+<div class="container-fluid">
+  <h3>Customer Updating Form</h3>
+</div>
+<form #customerForm="ngForm" (ngSubmit)="updateCustomer(customerForm)" 
+novalidate>
+ <!-- --> <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Identification Numbers</label>
+      <input
+        type="text"
+        required
+        #_id="ngModel"
+        [class.is-invalid]=" _id.invalid && _id.touched"
+        class="form-control"
+        name="_id"
+        [(ngModel)]="customerDetails._id"
+      />
+      <small
+        class="text-danger"
+        [class.d-none]="phoneNumber.valid || phoneNumber.untouched"
+        >Property number of phoneNumbers is required</small
+      >
+    </div>
+    <div class="form-group col-md-6">
+      <label>First Name</label>
+      <input
+        type="text"
+        required
+        #firstName="ngModel"
+        [class.is-invalid]="firstName.invalid && firstName.touched"
+        class="form-control"
+        name="firstName"
+        [(ngModel)]="customerDetails.firstName"
+      />
+      <small class="text-danger" [class.d-none]="firstName.valid || firstName.untouched"
+        >first name is required</small
+      >
+    </div>
+
+    <div class="form-group col-md-6">
+      <label>Last Name</label>
+      <input
+        type="text"
+        required
+        #lastNames="ngModel"
+        [class.is-invalid]="lastNames.invalid && lastNames.touched"
+        class="form-control"
+        name="lastNames"
+        [(ngModel)]="customerDetails.lastNames"
+      />
+      <small
+        class="text-danger"
+        [class.d-none]="lastNames.valid || lastNames.untouched"
+        >last Name is required</small
+      >
+    </div>
+
+    <div class="form-group col-md-6">
+      <label>emailAddress</label>
+      <input
+        type="text"
+        required
+        #emailAddress="ngModel"
+        [class.is-invalid]="emailAddress.invalid && emailAddress.touched"
+        class="form-control"
+        name="emailAddress"
+        [(ngModel)]="customerDetails.emailAddress"
+      />
+      <small
+        class="text-danger"
+        [class.d-none]="emailAddress.valid || emailAddress.untouched"
+        > email Address is required</small
+      >
+    </div>
+
+    <div class="form-group col-md-6">
+      <label>phone Numbers</label>
+      <input
+        type="text"
+        required
+        #phoneNumber="ngModel"
+        [class.is-invalid]="phoneNumber.invalid && phoneNumber.touched"
+        class="form-control"
+        name="phoneNumber"
+        [(ngModel)]="customerDetails.phoneNumber"
+      />
+      <small
+        class="text-danger"
+        [class.d-none]="phoneNumber.valid || phoneNumber.untouched"
+        >Property number of phoneNumbers is required</small
+      >
+    </div>
+
+    <div class="form-group col-md-6">
+      <label>birth date</label>
+      <input
+        type="text"
+        required
+        #physicalAddress="ngModel"
+        [class.is-invalid]="physicalAddress.invalid && physicalAddress.touched"
+        class="form-control"
+        name="physicalAddress"
+        [(ngModel)]="customerDetails.physicalAddress"
+      />
+      <small
+        class="text-danger"
+        [class.d-none]="physicalAddress.valid || physicalAddress.untouched"
+        >Property physical Address is required</small
+      >
+    </div>
+    <div class="form-group col-md-6">
+      <label>birth date</label>
+      <input
+        type="text"
+        required
+        #dob="ngModel"
+        [class.is-invalid]="dob.invalid && dob.touched"
+        class="form-control"
+        name="dob"
+        [(ngModel)]="customerDetails.dob"
+      />
+      <small
+        class="text-danger"
+        [class.d-none]="dob.valid || dob.untouched"
+        >Property dob is required</small
+      >
+    </div>
+    <div class="form-group col-md-6">
+      <label>age</label>
+      <input
+        type="number"
+        required
+        #age="ngModel"
+        [class.is-invalid]="age.invalid && age.touched"
+        class="form-control"
+        name="age"
+        [(ngModel)]="customerDetails.age"
+      />
+      <small class="text-danger" [class.d-none]="age.valid || age.untouched"
+        > age is required</small
+      >
+    </div>
+    
+
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <button
+          [disabled]="customerForm.form.invalid"
+          class="btn btn-primary "
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

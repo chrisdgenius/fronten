@@ -1,0 +1,50 @@
+<div>
+  <h3>Customers List</h3>
+  
+  <h1 *ngIf="customerList">Displaying {{ customerList.length }} 
+    <button
+    mat-raised-button
+    color="primary"
+    routerLinkActive="active"
+    routerLink="/add"
+  >
+    Add Customer
+  </button>
+</h1>
+
+  <table class="table table-hover">
+    <thead>
+      <tr class="table-primary">
+        <th scope="col">Customer Id</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Other Names</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Email Address</th>
+        <th scope="col">Age</th>
+        <th scope="col">Physical Address</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customerList">
+        <th scope="row">{{ customer._id }}</th>
+        <td>{{ customer.firstName }}</td>
+        <td>{{ customer.lastNames }}</td>
+        <td>{{ customer.phoneNumber }}</td>
+        <td>{{ customer.emailAddress }}</td>
+        <td>{{ customer.age }}</td>
+
+        <td>{{ customer.physicalAddress }}</td>
+        <th>
+          <span>
+            <a [routerLink]="['/edit', customer._id]">edit</a>
+            |
+          
+            <a  (click)="deleteCustomer(customer)">delete</a>
+            
+          </span>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+</div>

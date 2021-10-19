@@ -1,0 +1,82 @@
+<mat-toolbar style=" background-color: rgb(226, 114, 8);" >
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="opened=!opened">
+        <mat-icon>menu</mat-icon>
+      </button>
+      
+      <span>Management Platform</span>
+
+      <span class="example-spacer"></span>
+
+  <button  mat-flat-button  class="example-button-row" color="primary"    routerLinkActive="active" 
+  routerLink="/log-in"  >
+     Login 
+  </button>
+  <button  mat-flat-button  class="example-button-row" color="primary"   routerLinkActive="active"
+  routerLinkActive="active" routerLink="/register">
+    Register 
+  </button>
+
+  <button mat-fab  (click)="logout()"  type="button"
+   class="btn btn-danger">Logout</button>
+   
+         </mat-toolbar-row>
+</mat-toolbar>
+  
+  <mat-sidenav-container>
+    <mat-sidenav mode="side" [(opened)]="opened">
+        <mat-nav-list>
+        <div class="profile-card">
+          <div class="header">
+  
+          </div>
+          <img src="../../../assets/logo.png" alt="Gasper">
+        </div>
+  
+        <mat-divider></mat-divider>
+  
+        
+  
+        <a mat-list-item routerLinkActive="active" routerLink="/dashboard">
+          <mat-icon>home</mat-icon>Dashboard
+        </a>
+        <a mat-list-item routerLinkActive="active" routerLink="/customers">
+          <mat-icon>account_box</mat-icon>Customers
+        </a>
+        <a mat-list-item routerLinkActive="active" routerLink="/loans">
+          <mat-icon>store</mat-icon>Loans
+        </a>
+  
+        <mat-divider></mat-divider>
+  
+        <h2 matSubheader>Tools</h2>
+  
+        <a mat-list-item routerLinkActive="active" routerLink="/invoices">
+          <mat-icon>import_contacts</mat-icon>
+          Invoices
+        </a>
+  
+        <a mat-list-item routerLinkActive="active" routerLink="/reports">
+          <mat-icon>assessment</mat-icon>
+          Reports
+        </a>
+        <a mat-list-item routerLinkActive="active" routerLink="/edit">
+          <mat-icon>settings</mat-icon>
+          Settings
+        </a>
+        <a mat-list-item routerLinkActive="active" routerLink="/register">
+          <mat-icon>supervisor_account</mat-icon>
+          Register
+        </a>
+        <a mat-list-item routerLinkActive="active" routerLink="/register">
+          <mat-icon>help</mat-icon>
+          Contact us
+        </a>
+         
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+  
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
