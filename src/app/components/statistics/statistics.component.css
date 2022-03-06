@@ -1,0 +1,12 @@
+.chart-diplay{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 3em;
+    
+  }
+   
+ .others{
+   display: inline-flex;
+   width: 90%;
+   
+ }

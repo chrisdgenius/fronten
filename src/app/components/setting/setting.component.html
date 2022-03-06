@@ -1,0 +1,50 @@
+<div>
+  <h3>Registered Users List</h3>
+  
+  
+  <h1 *ngIf="userList"> 
+
+    <button
+    mat-raised-button color="primary" routerLinkActive="active" routerLink="/register" >
+    Register User
+  </button>
+
+</h1>
+
+  <table class="table table-hover">
+    <thead>
+      <tr class="table-primary">
+        <th scope="col">Title</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Other Names</th>
+        <th scope="col"> Phone </th>
+        <th scope="col"> Role</th>
+        <th scope="col">Email</th>
+        
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prof of userList">
+      
+        <td>{{ prof.title }}</td>
+        <td>{{ prof.firstName }}</td>
+        <td>{{ prof.otherNames }}</td>
+        <td>{{ prof.phoneNumber }}</td>
+        <td>{{ prof.role }}</td>
+         
+        <td>{{ prof.email }}</td>
+        
+        <th>
+          <span>
+            <a [routerLink]="['edit-user', prof._id]">Update</a>|
+            <a  style="color: green;" routerLink= "/view-user/{{ prof._id }}">Activate</a>|
+            |<a style="color: rgb(255, 115, 0);"  routerLink="userList/{{ userList._id }}">Deactivate</a>|
+            <a style="color: red;"  (click)="deleteuserList(prof)">Delete</a>
+            
+          </span>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+</div>

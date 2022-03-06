@@ -8,16 +8,16 @@
 
       <span class="example-spacer"></span>
 
-  <button  mat-flat-button  class="example-button-row" color="primary"    routerLinkActive="active" 
+  <button  mat-flat-button  class="example-button-row" color="primary"  *ngIf="!this.authService.isLoggedIn" routerLinkActive="active" 
   routerLink="/log-in"  >
      Login 
   </button>
-  <button  mat-flat-button  class="example-button-row" color="primary"   routerLinkActive="active"
+  <button  mat-flat-button  class="example-button-row" color="primary"  *ngIf="!this.authService.isLoggedIn"  routerLinkActive="active"
   routerLinkActive="active" routerLink="/register">
     Register 
   </button>
 
-  <button mat-fab  (click)="logout()"  type="button"
+  <button mat-fab  (click)="logout()" *ngIf="this.authService.isLoggedIn" type="button"
    class="btn btn-danger">Logout</button>
    
          </mat-toolbar-row>
@@ -30,7 +30,7 @@
           <div class="header">
   
           </div>
-          <img src="../../../assets/logo.png" alt="Gasper">
+          <img src="../../../assets/minotaur.ico" alt="Gasper">
         </div>
   
         <mat-divider></mat-divider>
@@ -40,10 +40,10 @@
         <a mat-list-item routerLinkActive="active" routerLink="/dashboard">
           <mat-icon>home</mat-icon>Dashboard
         </a>
-        <a mat-list-item routerLinkActive="active" routerLink="/customers">
+        <a mat-list-item *ngIf="this.authService.isLoggedIn" routerLinkActive="active" routerLink="/customerslist">
           <mat-icon>account_box</mat-icon>Customers
         </a>
-        <a mat-list-item routerLinkActive="active" routerLink="/loans">
+        <a mat-list-item routerLinkActive="active" routerLink="/loan">
           <mat-icon>store</mat-icon>Loans
         </a>
   
@@ -60,7 +60,7 @@
           <mat-icon>assessment</mat-icon>
           Reports
         </a>
-        <a mat-list-item routerLinkActive="active" routerLink="/edit">
+        <a mat-list-item routerLinkActive="active" routerLink="/setting">
           <mat-icon>settings</mat-icon>
           Settings
         </a>
@@ -68,7 +68,7 @@
           <mat-icon>supervisor_account</mat-icon>
           Register
         </a>
-        <a mat-list-item routerLinkActive="active" routerLink="/register">
+        <a mat-list-item routerLinkActive="active" routerLink="/contact">
           <mat-icon>help</mat-icon>
           Contact us
         </a>

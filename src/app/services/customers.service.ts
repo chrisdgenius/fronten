@@ -9,8 +9,9 @@ import {catchError} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class CustomersService {
-  private customersUrl = 'http://localhost:9000/customers';
-
+  //private customersUrl = 'http://localhost:9000/customers';
+  //for heroku deployment
+  private customersUrl = 'customers';
   constructor(private http: HttpClient) {}
 
   createCustomer(payload: Customer): Observable<Customer> {

@@ -15,6 +15,11 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { UserProfileComponent } from './auth/user-profile/user-profile.component';
 import { AuthInterceptor } from './auth/authconfig.interceptor';
+import { SettingComponent } from './components/setting/setting.component';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import { ChartsModule } from 'ng2-charts';
+import { StatisticsComponent } from './components/statistics/statistics.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +30,11 @@ import { AuthInterceptor } from './auth/authconfig.interceptor';
     CustomerListComponent,
     SignupComponent,
     SigninComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    SettingComponent,
+    PagenotfoundComponent,
+    StatisticsComponent,
+    DashboardComponent
     
   ],
   imports: [
@@ -34,7 +43,8 @@ import { AuthInterceptor } from './auth/authconfig.interceptor';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule
   ],
   providers: [
     {
